@@ -18,7 +18,13 @@ const winConditions = [
 ];
 
 function handleCellClick(event) {
-  const index = [].indexOf.call(cells, event.target);
+  let index = -1;
+  for (let i = 0; i < cells.length; i++) {
+    if (cells[i] === event.target) {
+      index = i;
+      break;
+    }
+  }
   if (board[index] || !gameActive) return;
 
   board[index] = currentPlayer;
