@@ -26,7 +26,9 @@ function handleCellClick(event) {
 
   const winner = checkWinner();
   if (winner) {
-    winnerMessage.textContent = `${winner === "X" ? "X" : "O"} ha vinto!`;
+    winnerMessage.textContent = `${
+      winner === "X" ? "X" : "O"
+    } ha vinto, clicca su RESET per iniziare una nuova partita!`;
     gameActive = false;
   } else if (!board.includes("")) {
     winnerMessage.textContent = "Pareggio!";
